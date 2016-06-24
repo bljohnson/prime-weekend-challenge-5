@@ -2,9 +2,10 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({extended:false}); // required in order to POST (app.post)
-var pg = require('pg');
-var connectionString = 'postgres://localhost:5432/DATABASENAMEGOESHEREONCESETUP'; // always use 5432 fpr local host and use db name after
+var urlencodedParser = bodyParser.urlencoded({extended:false}); // NOT SURE IF I NEED THIS FOR MONGODB.... required in order to POST (app.post)
+app.use(bodyParser.json()); // parse text as JSON to req.body
+var mongoose = require('mongoose');
+mongoose.connect('localhost:/27017/petsdb'); // 27017 is default mongo port
 
 // spin up server
 app.listen(3000, 'localhost', function (req, res) {
