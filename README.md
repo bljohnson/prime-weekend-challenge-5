@@ -18,7 +18,9 @@ Each Pet will need to have the following information: - Name (example, Grilled C
 Everyone, post info and image URL links to your pets in the nu room for everyone!
 
 **Hard Mode**
+
 Look into delete functionality with Mongoose and add a button in the Pets view to delete a pet from the database. This will require research in how to identify the pet that is supposed to be deleted from the database.
 
 **Pro Mode**
+
 Look into Filtering. In the Pets view, include a button to turn on Alphabetical Sorting of the pets that can be toggled on and off.
