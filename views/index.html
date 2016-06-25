@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="petApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <input type="text" ng-model="brainiacBinder" value="" placeholder="2-way bind input">
-    <p>2-way bind output: {{brainiacBinder}}</p>
+    <div ng-controller="PetController">
+    Pet's Name: <input type="text" ng-model="nameIn" value="">
+    Species: <input type="text" ng-model="speciesIn" value="">
+    Age (years): <input type="text" ng-model="ageIn" value="">
+    Image: <input type="text" ng-model="imageIn" value="" placeholder="Paste an image link here!">
+    <button type="button" name="addPetButton" ng-click="addPet()">Add Pet</button>
+    <button type="button" name="displayPetsButton" ng-click="getPets()">Display Pets</button>
+
+    <!--display all pets in array of pet objects in petsdb on DOM-->
+    <p ng-repeat="pet in allPets">{{pet.name}} {{pet.animal_type}} {{pet.age}} {{pet.image_url}}</p>
+    </div>
   </body>
 </html>
