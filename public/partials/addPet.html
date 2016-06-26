@@ -1,0 +1,8 @@
+<!--html for Add Pet tab-->
+<div ng-controller="PetController">
+  Pet's Name: <input type="text" ng-model="nameIn" value="">
+  Species: <input type="text" ng-model="speciesIn" value="">
+  Age (years): <input type="text" ng-model="ageIn" value="">
+  Image: <input type="text" ng-model="imageIn" value="" placeholder="Paste an image link here!">
+  <button type="button" name="addPetButton" ng-click="addPet()">Add Pet</button>
+</div>

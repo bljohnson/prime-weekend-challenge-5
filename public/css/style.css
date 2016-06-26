@@ -1,4 +1,8 @@
-/*for testing purposes*/
-body {
-  background-color: rgb(93,172,238);
+/* prevents unwanted route changes caused by issue with adding empty href attributes to link tags in AngularJS */
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+form.tab-form-demo .tab-pane {
+    margin: 20px 20px;
 }

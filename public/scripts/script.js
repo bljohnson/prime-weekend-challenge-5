@@ -1,7 +1,7 @@
 console.log( 'script.js sourced in' );
 
 // create AngularJS module
-var petApp = angular.module('petApp',[]);
+var petApp = angular.module('petApp',['ui.bootstrap']);
 
 // create a controller to define petApp's behavior
 petApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
@@ -39,5 +39,11 @@ petApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
        console.log(response.statusText);
      }; // end myError function
    }; // end getPets function
-
 }]); // end PetController
+
+petApp.controller('TabsController', function ($scope, $window) {
+  $scope.tabs = [
+    { title:'Add Pet', content: 'partials/addPet.html'},
+    { title:'View Pets', content: 'partials/viewPets.html' }
+  ];
+});

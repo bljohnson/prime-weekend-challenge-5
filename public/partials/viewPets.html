@@ -1,0 +1,11 @@
+<!--html for View Pets tab-->
+<div ng-controller="PetController">
+  <button type="button" name="viewPetsButton" ng-click="getPets()">View Pets</button>
+  <!--display to DOM all pets in array of pet objects from petsdb-->
+  <p ng-repeat="pet in allPets">
+    {{pet.name}}
+    {{pet.animal_type}}
+    {{pet.age}}
+    <img ng-src="{{pet.image_url}}"/>
+  </p>
+</div>

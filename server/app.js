@@ -70,7 +70,8 @@ app.post('/postPet', function(req, res) {
     name: req.body.name,
     animal_type: req.body.species,
     age: req.body.age,
-    image_url: req.body.image
+    image_url: req.body.image,
+    width: 400
   });
 
 // saves object to db. .save is a method specific to Mongoose

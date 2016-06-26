@@ -4,21 +4,20 @@
     <meta charset="utf-8">
     <title></title>
     <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="vendors/ui-bootstrap-tpls-1.3.3.min.js" charset="utf-8"></script>
     <script src="scripts/script.js" charset="utf-8"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <div ng-controller="PetController">
-    Pet's Name: <input type="text" ng-model="nameIn" value="">
-    Species: <input type="text" ng-model="speciesIn" value="">
-    Age (years): <input type="text" ng-model="ageIn" value="">
-    Image: <input type="text" ng-model="imageIn" value="" placeholder="Paste an image link here!">
-    <button type="button" name="addPetButton" ng-click="addPet()">Add Pet</button>
-    <button type="button" name="displayPetsButton" ng-click="getPets()">Display Pets</button>
-
-    <!--display all pets in array of pet objects in petsdb on DOM-->
-    <p ng-repeat="pet in allPets">{{pet.name}} {{pet.animal_type}} {{pet.age}} {{pet.image_url}}</p>
+    <!--tab functionality-->
+    <div ng-controller="TabsController">
+      <uib-tabset active="active">
+        <uib-tab index="0" heading="Home">Welcome/About Page</uib-tab>
+        <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.title}}">
+          <div ng-include="tab.content"></div>
+        </uib-tab>
+      </uib-tabset>
     </div>
   </body>
 </html>
