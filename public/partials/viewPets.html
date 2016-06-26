@@ -1,8 +1,8 @@
 <!--html for View Pets tab-->
 <div ng-controller="PetController" ng-init="getPets()">
-  <button type="button" name="viewPetsButton" ng-click="getPets()">Refresh View</button>
+<!-- <div ng-controller="ViewpetsController"> -->
+  <button type="button" name="viewPetsButton" class="btn btn-default" id="viewPetsButton" ng-click="getPets()">Refresh View</button>
   <!--display to DOM all pets in array of pet objects from petsdb-->
-  <!-- <uib-tab title="View Pets" ng-click="getPets()"></uib-tab> -->
   <table class="table table-striped">
     <tr>
       <th>Pet's Name</th>
@@ -16,7 +16,9 @@
       <td>{{pet.animal_type}}</td>
       <td>{{pet.age}}</td>
       <td><img ng-src="{{pet.image_url}}"/></td>
-      <td><button type="button" name="deleteButton">Delete Pet</button></td>
+      <td><button type="button" name="deleteButton" class="btn btn-default" id="{{pet._id}}" ng-click="deletePet($index)">Delete Pet</button></td>
     </tr>
   </table>
+</div>
+</div>
 </div>

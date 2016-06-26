@@ -85,18 +85,3 @@ app.post('/postPet', function(req, res) {
     } // end if/else statement
   }); // end newPet save function
 }); // end app.post /postPet route
-
-// delete route to delete a pet from db
-// app.delete('/deletePet', function (req, res) {
-//   console.log('deleted pet');
-//
-//   Pet.findOne({name: 'Calvin'}, function (err, petResult) {
-//     if (err) {
-//       console.log(err);
-//       res.sendStatus(500);
-//     } else {
-//       Pet.remove({_id: petResult._id}, function (err) {});
-//       res.sendStatus(200);
-//     }
-//   });
-// });// end delete route

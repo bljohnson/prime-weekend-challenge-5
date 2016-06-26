@@ -65,3 +65,8 @@ table {
 table tr:first-child th {
   background-color: rgb(180,163,131);
 }
+
+#viewPetsButton {
+  margin-left: 47%;
+  margin-top: 3%;
+}
