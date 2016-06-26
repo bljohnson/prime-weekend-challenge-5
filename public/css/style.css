@@ -7,10 +7,12 @@ body {
   font-family: Tahoma;
 }
 
+/*tab styling*/
 form.tab-form-demo .tab-pane {
     margin: 20px 20px;
 }
 
+/*pet images size*/
 img {
   width: 200px;
 }
@@ -26,6 +28,7 @@ img {
   margin-bottom: 2%;
 }
 
+/*style welcome message explaining how to use app*/
 .jumbotron p {
   font-size: 20px;
   text-align: center;
@@ -44,6 +47,7 @@ img {
   text-align: center;
 }
 
+/*styling for Add Pet form*/
 form {
   border: 1px solid black;
   padding: 2%;
@@ -56,16 +60,19 @@ form button {
   margin-left: 43%;
 }
 
+/*styling for table displaying all pets in db*/
 table {
   margin: 2% auto;
   table-layout: fixed;
   font-size: 16px;
 }
 
+/*set different background color for header row in table so it stands out*/
 table tr:first-child th {
   background-color: rgb(180,163,131);
 }
 
+/*position Refresh Database button*/
 #viewPetsButton {
   margin-left: 47%;
   margin-top: 3%;

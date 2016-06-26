@@ -42,30 +42,29 @@ app.get('/getPets', function(req, res){
 }); // end '/getPets' app.get
 
 // dummy route - 'hard coded' Calvin to test
-// app.get('/calvin', function(req, res) {
-//   var calvin = new Pet({
-//     name: 'Calvin',
-//     animal_type: 'dog',
-//     age: 8,
-//     image_url:
-//   });
-//
-//   calvin.save(function(err) {
-//     if(err){
-//       console.log(err);
-//       res.sendStatus(500);
-//     }else{
-//       console.log('Pet saved successfully!');
-//       res.sendStatus(200);
-//     }
-//   });
-// }); // end Calvin get route
+  // app.get('/calvin', function(req, res) {
+  //   var calvin = new Pet({
+  //     name: 'Calvin',
+  //     animal_type: 'dog',
+  //     age: 8,
+  //     image_url:
+  //   });
+  //
+  //   calvin.save(function(err) {
+  //     if(err){
+  //       console.log(err);
+  //       res.sendStatus(500);
+  //     }else{
+  //       console.log('Pet saved successfully!');
+  //       res.sendStatus(200);
+  //     }
+  //   });
+  // }); // end Calvin get route
 
 // create post route to petsdb
 app.post('/postPet', function(req, res) {
   console.log('pet posted successfully');
   console.log('req.body = ', req.body);
-
 // creates object to store in petsdb using object received by server, property names need to match those in model schema
   var newPet = new Pet({ // create new Pet to create new instance of Pet model in petsdb, using the following values
     name: req.body.name,
@@ -73,7 +72,6 @@ app.post('/postPet', function(req, res) {
     age: req.body.age,
     image_url: req.body.image,
   });
-
 // saves object to db. .save is a method specific to Mongoose
   newPet.save(function(err) {
     if (err) {
@@ -85,3 +83,22 @@ app.post('/postPet', function(req, res) {
     } // end if/else statement
   }); // end newPet save function
 }); // end app.post /postPet route
+
+
+// app.delete('/deletePet', function(req, res) { // not currently working
+//   console.log('delete route');
+//
+//   Pet.findById({id, function (err, pet) {
+//     if (err) {
+//       console.log(err);
+//       res.sendStatus(500);
+//     } else {
+//       pet.remove();
+//       res.sendStatus(200);
+//     }
+    // pet.save(function (err) {
+    //   if (err) return handleError(err);
+    //   res.send(pet);
+    // });
+//   }); // end Pet.findById
+// }); // end /deletePet route

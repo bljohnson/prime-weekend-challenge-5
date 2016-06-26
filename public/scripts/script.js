@@ -46,14 +46,10 @@ petApp.controller('PetController', ['$scope', '$http', function ($scope, $http) 
    $scope.deletePet = function(index){
      console.log('deleted pet');
      $scope.allPets.splice(index, 1);
-   }; // end removeRow function
-
-  //  $scope.removePet = function () {
-  //    var myEl = angular.element( document.querySelector( '#{{pet._id}}' ) );
-  //    myEl.remove();
-  //  };
+   }; // end deletePet function
 
 }]); // end PetController
+
 
 petApp.controller('TabsController', function ($scope, $window) {
   $scope.tabs = [
@@ -62,19 +58,3 @@ petApp.controller('TabsController', function ($scope, $window) {
     { title:'View Pets', content: 'partials/viewPets.html'}
   ];
 });
-
-// petApp.controller('ViewpetsController', function ($scope, $window) {
-//   $window.onload = function () {
-//     $scope.getPets = function () { // define function that will get pets currently in petsdb via HTTP call
-//        $http({
-//          method: 'GET',
-//          url: '/getPets'
-//        }).then(function(response){
-//          $scope.allPets = response.data; // .data is the data in the response; allPets is the array of objects in petsdb
-//          console.log($scope.allPets);
-//        }), function myError(response){
-//          console.log(response.statusText);
-//        }; // end myError function
-//      }; // end getPets function
-//   };
-// });
