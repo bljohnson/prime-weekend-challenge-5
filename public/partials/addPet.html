@@ -1,10 +1,26 @@
 <!--html for Add Pet tab-->
 <div ng-controller="PetController">
-  <div class="inputs">
-    Pet's Name: <input type="text" ng-model="nameIn" value="">
-    Species: <input type="text" ng-model="speciesIn" value="">
-    Age (years): <input type="text" ng-model="ageIn" value="">
-    Image (URL): <input type="text" ng-model="imageIn" value="">
-  </div> 
-  <button type="button" name="addPetButton" ng-click="addPet()">Add Pet</button>
+
+  <form>
+    <div class="form-group">
+      <label for="petName">Pet's Name</label>
+      <input type="text" ng-model="nameIn" class="form-control" id="petName" value=""><br>
+    </div>
+    <div class="form-group">
+      <label for="species">Species</label>
+      <input type="text" ng-model="speciesIn" class="form-control" id="species" value=""><br>
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="text" ng-model="ageIn" class="form-control" id="age" value=""><br>
+    </div>
+    <div class="form-group">
+      <label for="image">Image (URL)</label>
+      <input type="text" ng-model="imageIn" class="form-control" id="image" value=""><br>
+      <!-- <input type="file" ng-model="imageIn" id="image" value=""><br>    This enables file uploads...-->
+    </div>
+    
+      <button type="button" name="addPetButton" class="btn btn-default" ng-click="addPet()">Add Pet</button>
+  </form>
+
 </div>

@@ -2,10 +2,18 @@
 <div ng-controller="PetController">
   <button type="button" name="viewPetsButton" ng-click="getPets()">View Pets</button>
   <!--display to DOM all pets in array of pet objects from petsdb-->
-  <p ng-repeat="pet in allPets">
-    {{pet.name}}
-    {{pet.animal_type}}
-    {{pet.age}}
-    <img ng-src="{{pet.image_url}}"/>
-  </p>
+  <table class="table table-striped">
+    <tr>
+      <th>Pet's Name</th>
+      <th>Species</th>
+      <th>Age</th>
+      <th>Image</th>
+    </tr>
+    <tr ng-repeat="pet in allPets">
+      <th>{{pet.name}}</th>
+      <th>{{pet.animal_type}}</th>
+      <th>{{pet.age}}</th>
+      <th><img ng-src="{{pet.image_url}}"/></th>
+    </tr>
+  </table>
 </div>

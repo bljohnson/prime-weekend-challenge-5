@@ -5,11 +5,11 @@ var Schema = mongoose.Schema; // enable use of schema property
 var petSchema = new Schema ({
   name: {type: String, required: true},
   animal_type: {type: String, required: true},
-  age: {type: Number, required: true},
+  age: {type: String, required: true},
   image_url: {type: String, required: true},
   width: Number
 }); // end petSchema
 
-var Pet = mongoose.model('pets', petSchema); // creates model from petSchema called Pet, and stores in pets 'collection' of docs within petsdb
+var Pet = mongoose.model('myPets', petSchema); // creates model from petSchema called Pet, and stores in myPets 'collection' of docs within petsdb
 
 module.exports = Pet;

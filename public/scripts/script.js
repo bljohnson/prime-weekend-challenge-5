@@ -48,7 +48,3 @@ petApp.controller('TabsController', function ($scope, $window) {
     { title:'View Pets', content: 'partials/viewPets.html' }
   ];
 });
-
-// petApp.controller('HomeController', ['$scope', '$http', function ($scope, $http) {
-//   $scope.image = 'https://postimg.org/image/i01iyoca9/';
-// }]); // end HomeController
