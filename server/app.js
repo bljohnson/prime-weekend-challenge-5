@@ -3,7 +3,8 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var connectToDB = mongoose.connect('localhost:/27017/petsdb').connection; // 27017 is default mongo port, followed by chosen db name
+mongoose.connect('mongodb://localhost:27017/petsdb');
+// var connectToDB = mongoose.connect('mongodb://localhost:/27017/petsdb').connection; // 27017 is default mongo port, followed by chosen db name
 var Pet = require('../models/newpet'); // require model file that creates petSchema
 
 // middleware
@@ -11,12 +12,12 @@ var urlencodedParser = bodyParser.urlencoded({extended:false}); // required in o
 app.use(bodyParser.json()); // parse text as JSON to req.body
 
 // test db connection
-connectToDB.on('error', function (err) { // when connection errors out
-    console.log('mongodb connection error:', err);
-});
-connectToDB.once('open', function () { // when able to connect to db
-  console.log('mongodb connection open!');
-});
+// connectToDB.on('error', function (err) { // when connection errors out
+//     console.log('mongodb connection error:', err);
+// });
+// connectToDB.once('open', function () { // when able to connect to db
+//   console.log('mongodb connection open!');
+// });
 
 // spin up server
 app.listen(3000, 'localhost', function (req, res) {
@@ -71,17 +72,31 @@ app.post('/postPet', function(req, res) {
     animal_type: req.body.species,
     age: req.body.age,
     image_url: req.body.image,
-    width: 400
   });
 
 // saves object to db. .save is a method specific to Mongoose
   newPet.save(function(err) {
-    if(err){
+    if (err) {
       console.log(err);
       res.sendStatus(500);
-    }else{
+    } else {
       console.log('Pet saved successfully!');
       res.sendStatus(200);
-    }
-  });
-});
+    } // end if/else statement
+  }); // end newPet save function
+}); // end app.post /postPet route
+
+// delete route to delete a pet from db
+// app.delete('/deletePet', function (req, res) {
+//   console.log('deleted pet');
+//
+//   Pet.findOne({name: 'Calvin'}, function (err, petResult) {
+//     if (err) {
+//       console.log(err);
+//       res.sendStatus(500);
+//     } else {
+//       Pet.remove({_id: petResult._id}, function (err) {});
+//       res.sendStatus(200);
+//     }
+//   });
+// });// end delete route

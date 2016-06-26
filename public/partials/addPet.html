@@ -4,7 +4,7 @@
   <form>
     <div class="form-group">
       <label for="petName">Pet's Name</label>
-      <input type="text" ng-model="nameIn" class="form-control" id="petName" value=""><br>
+      <input type="text" ng-model="nameIn" class="form-control" id="petName" value="" ng-change="getPets()"><br>
     </div>
     <div class="form-group">
       <label for="species">Species</label>
@@ -19,7 +19,7 @@
       <input type="text" ng-model="imageIn" class="form-control" id="image" value=""><br>
       <!-- <input type="file" ng-model="imageIn" id="image" value=""><br>    This enables file uploads...-->
     </div>
-    
+
       <button type="button" name="addPetButton" class="btn btn-default" ng-click="addPet()">Add Pet</button>
   </form>
 

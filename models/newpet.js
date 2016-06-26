@@ -7,9 +7,8 @@ var petSchema = new Schema ({
   animal_type: {type: String, required: true},
   age: {type: String, required: true},
   image_url: {type: String, required: true},
-  width: Number
 }); // end petSchema
 
-var Pet = mongoose.model('myPets', petSchema); // creates model from petSchema called Pet, and stores in myPets 'collection' of docs within petsdb
+var Pet = mongoose.model('mypets', petSchema); // creates model from petSchema called Pet, and stores in mypets 'collection' of docs within petsdb
 
 module.exports = Pet;

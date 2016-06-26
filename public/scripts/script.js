@@ -45,6 +45,6 @@ petApp.controller('TabsController', function ($scope, $window) {
   $scope.tabs = [
     { title: 'Home', content: 'partials/home.html'},
     { title:'Add Pet', content: 'partials/addPet.html'},
-    { title:'View Pets', content: 'partials/viewPets.html' }
+    { title:'View Pets', content: 'partials/viewPets.html'}
   ];
 });

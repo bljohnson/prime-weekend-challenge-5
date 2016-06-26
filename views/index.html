@@ -13,7 +13,7 @@
     <!--tab functionality-->
     <div ng-controller="TabsController">
       <uib-tabset active="active">
-        <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="{{tab.title}}">
+        <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}">
           <div ng-include="tab.content"></div>
         </uib-tab>
       </uib-tabset>

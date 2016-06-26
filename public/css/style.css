@@ -33,9 +33,10 @@ img {
 }
 
 .jumbotron img {
-  margin-left: 32%;
+  margin-left: 33%;
   margin-bottom: 2%;
   width: 35%;
+  border-radius: 20%;
 }
 
 .footer p {
@@ -53,4 +54,14 @@ form {
 
 form button {
   margin-left: 43%;
+}
+
+table {
+  margin: 2% auto;
+  table-layout: fixed;
+  font-size: 16px;
+}
+
+table tr:first-child th {
+  background-color: rgb(180,163,131);
 }
