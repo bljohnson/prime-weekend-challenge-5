@@ -4,7 +4,7 @@ console.log( 'script.js sourced in' );
 var petApp = angular.module('petApp',['ui.bootstrap']);
 
 // create a controller to define petApp's behavior
-petApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
+petApp.controller('PetController', ['$scope', '$http', function ($scope, $http) {
   // code that gets executed when this controller is called
   $scope.addPet = function () { // define function that will create object from user input and send to petsdb
     event.preventDefault();
@@ -43,7 +43,12 @@ petApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
 
 petApp.controller('TabsController', function ($scope, $window) {
   $scope.tabs = [
+    { title: 'Home', content: 'partials/home.html'},
     { title:'Add Pet', content: 'partials/addPet.html'},
     { title:'View Pets', content: 'partials/viewPets.html' }
   ];
 });
+
+// petApp.controller('HomeController', ['$scope', '$http', function ($scope, $http) {
+//   $scope.image = 'https://postimg.org/image/i01iyoca9/';
+// }]); // end HomeController
