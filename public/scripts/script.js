@@ -55,27 +55,6 @@ petApp.controller('PetController', ['$scope', '$http', function ($scope, $http) 
      });
    }; // end deletePet function
 
-   //
-  //  $scope.deletePet = function(idx){
-  //      var petToDelete = $scope.allTheRecords[idx];
-  //      // removes the element from the Dom
-  //      // delete button in html has ng-click='deletePet($index)
-  //      // to give specific index of the button clicked
-  //      $scope.allTheRecords.splice(idx, 1);
-  //      console.log(petToDelete._id);
-  //      // creating object with the db id to send to server
-  //      var petId = {id: petToDelete._id};
-  //      $http({
-  //        method: 'POST',
-  //        url: '/deletePet',
-  //        data: petId
-  //      });
-  //    };
-     // in app.js used Model.remove({'_id': req.body.id}, function(err){
-     // to remove from database
-
-
-
 }]); // end PetController
 
 
