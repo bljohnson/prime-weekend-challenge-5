@@ -84,21 +84,18 @@ app.post('/postPet', function(req, res) {
   }); // end newPet save function
 }); // end app.post /postPet route
 
-
-// app.delete('/deletePet', function(req, res) { // not currently working
-//   console.log('delete route');
-//
-//   Pet.findById({id, function (err, pet) {
-//     if (err) {
-//       console.log(err);
-//       res.sendStatus(500);
-//     } else {
-//       pet.remove();
-//       res.sendStatus(200);
-//     }
-    // pet.save(function (err) {
-    //   if (err) return handleError(err);
-    //   res.send(pet);
-    // });
-//   }); // end Pet.findById
-// }); // end /deletePet route
+// delete pet from DOM and db
+app.post('/deletePet', function(req, res) {
+  console.log('delete route');
+  Pet.findOne({'_id': req.body.id}, function (err, pet) {
+    if (err) {
+      console.log (err);
+    } else {
+      Pet.remove({'_id': req.body.id}, function (err) {
+        if (err) {
+          console.log ('remove ' + err);
+        }
+      }); // end remove function
+    } // end if/else statement
+  }); // end findOne function
+}); // end /deletePet route
