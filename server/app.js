@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/petsdb');
 var Pet = require('../models/newpet'); // require model file that creates petSchema
 
 // middleware
-var urlencodedParser = bodyParser.urlencoded({extended:false}); // required in order to POST (app.post)
+// var urlencodedParser = bodyParser.urlencoded({extended:false}); // required in order to POST (app.post)
 app.use(bodyParser.json()); // parse text as JSON to req.body
 
 // test db connection
