@@ -2,7 +2,7 @@
 <html ng-app="petApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Pet Database | Bethany Johnson</title>
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="vendors/ui-bootstrap-tpls-1.3.3.min.js" charset="utf-8"></script>
     <script src="scripts/script.js" charset="utf-8"></script>
@@ -13,7 +13,7 @@
     <!--tab functionality-->
     <div ng-controller="TabsController">
       <uib-tabset active="active">
-        <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" ng-click="getPets()">
+        <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}">
           <div ng-include="tab.content"></div>
         </uib-tab>
       </uib-tabset>
